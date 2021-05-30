@@ -1,0 +1,24 @@
+<mat-toolbar color="primary" style="position: fixed; z-index: 1;">
+    <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div>
+        <span>Medicall</span>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <nav fxLayout fxLayoutGap="15px" *ngFor="let i of data" class="navbarClass">
+            <a mat-button
+                class="mat-focus-indicator docs-navbar-hide-small docs-button mat-button mat-button-base ng-star-inserted"
+                [routerLink]="i.link">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">{{i.icon}}
+                </mat-icon>{{i.label}}
+            </a>
+        </nav>
+        <a mat-button class="mat-focus-indicator docs-navbar-hide-small docs-button mat-icon-button ng-star-inserted"
+            routerLink="login">
+            <mat-icon>login</mat-icon>
+        </a>
+    </div>
+</mat-toolbar>

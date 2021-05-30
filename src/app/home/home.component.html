@@ -1,0 +1,143 @@
+<div class="container-fluid container-styling" style="position: relative; top: 4rem;">
+    <section class="carouselClass">
+        <p-carousel [value]="images" styleClass="custom-carousel" [numVisible]="1" [numScroll]="1" [circular]="true"
+            [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+            <ng-template let-product pTemplate="item">
+                <img [src]="product.path" width="100%" />
+            </ng-template>
+        </p-carousel>
+    </section>
+    <!--===================HOME BANNER===============================-->
+    <section class="section section-search">
+        <mat-card style="margin-bottom: 1rem;" class="jumbotron">
+            <div class="container-fluid" style=" padding-top: 3rem; padding-bottom: 3rem; ">
+                <div class="banner-header text-center ">
+                    <h1 class="d_desktop">Search Doctor, Make an Appointment</h1>
+                    <p class="d_desktop">Discover the best doctors, clinic &amp; hospital the city nearest to you.
+                    </p>
+                </div>
+                <div class="banner-wrapper">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 ">
+                            <mat-form-field appearance="outline" class="searchLocation">
+                                <mat-label>Search Location</mat-label>
+                                <input matInput placeholder="Placeholder" matNativeControl>
+                                <mat-icon matPrefix>location_on</mat-icon>
+                                <mat-hint>Choose your Location</mat-hint>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" class="searchDoctor">
+                                <mat-label>Search Doctors, Clinics, Hospitals, Diseases Etc</mat-label>
+                                <input matInput placeholder="Placeholder" matNativeControl>
+                                <mat-icon matPrefix>search</mat-icon>
+                                <mat-hint>Ex : Dental or Sugar Check up etc</mat-hint>
+                            </mat-form-field>
+                            <button mat-raised-button color="primary" class="serviceButton">
+                                <mat-icon>search</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+
+
+    </section>
+    <!--=======================SERVICES SECTION========================-->
+    <section>
+        <div class="">
+            <p-carousel [value]="services" styleClass="custom-carousel" [numVisible]="4" [numScroll]="1"
+                [circular]="true" [responsiveOptions]="responsiveOptions">
+                <ng-template pTemplate="header">
+                    <div class="row">
+                        <div class="service-header">
+                            <h1><a routerLink="/about">Services we are providing...</a></h1>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template let-product pTemplate="item">
+                    <div class="p-mb-3">
+                    </div>
+                    <div class="serviceClass p-mb-3">
+                        <div>
+                            <h2 [ngStyle]="{'color': product.titleColor}">{{product.title}}</h2>
+                        </div>
+                        <div>
+                            <span> {{product.description}}</span>
+                            <div style="position: fixed; bottom: 1.5rem;">
+                                <button mat-raised-button color color="accent" (click)="openDialog(product)"
+                                    styleClass="">{{product.buttonLabel}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </div>
+    </section>
+    <!--==============Advertisement Banner===============-->
+    <section class="advertiseMain">
+        <div class="row">
+            <div class=" col-md-6 col-12">
+                <div class="addItem1">
+                    <a href="#">
+                        <div class="hovereffect">
+                            <img class="image-fluid"
+                                src="https://assets.mfine.co/api/contentservice/attachments/download/web/common/WEb_Lab.jpg"
+                                alt="Book Lab Test" title="Book Lab Test">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class=" col-md-6 col-12">
+                <div class="addItem2">
+                    <a href="#">
+                        <div class="hovereffect">
+                            <img class="image-fluid"
+                                src="https://assets.mfine.co/api/contentservice/attachments/download/web/common/Homecare_small_web.jpg"
+                                alt="Book Lab Test" title="Book Lab Test">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================BLOGS SECTION============================-->
+    <section>
+        <div style=" margin-bottom: 1rem;">
+            <p-carousel [value]="services" styleClass="custom-carousel" [numVisible]="4" [numScroll]="1"
+                [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions">
+                <ng-template pTemplate="header">
+                    <div class="col-lg-6 pr-lg-3 mt-lg-auto">
+                        <h2 style="color: #00a954; font-size: 2rem;">
+                            <span style="border-bottom: 2px solid #00a954">
+                                Health Blogs
+                            </span>
+                        </h2>
+                    </div>
+                </ng-template>
+                <ng-template let-product pTemplate="item">
+                    <div class="product-item-content">
+                        <div class="p-mb-3">
+                        </div>
+                        <mat-card class="example-card" tabindex="0">
+                            <mat-card-header>
+                                <mat-card-title>{{product.title}}</mat-card-title>
+                            </mat-card-header>
+                            <img mat-card-image
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUY8DoAOTMN4ZWfi2PrV3grpVDuSwzXBEI0A&usqp=CAU"
+                                alt="Photo of a Shiba Inu">
+                            <mat-card-content>
+                                <p>
+                                    {{product.description}}
+                                </p>
+                            </mat-card-content>
+                            <mat-card-actions>
+                                <button mat-raised-button color color="accent">{{product.buttonLabel}}</button>
+                            </mat-card-actions>
+                        </mat-card>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </div>
+    </section>
+</div>
+<app-footer style="padding-top: 1rem;"></app-footer>

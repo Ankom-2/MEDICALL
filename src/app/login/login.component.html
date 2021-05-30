@@ -1,0 +1,29 @@
+<div class="container" style="position: relative; top: 4rem;">
+    <div class="main-div-login">
+        <mat-card class="example-card">
+            <mat-toolbar color="accent">
+                <span class="fill-remaining-space">Login to your account</span>
+            </mat-toolbar>
+            <div>
+                <form mat-form [formGroup]="registerForm" class="form-group">
+                    <mat-form-field appearance="outline" class="form-element formMargin">
+                        <mat-label>Enter Email</mat-label>
+                        <input matInput placeholder="Email" formControlName="email">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="form-element">
+                        <mat-label>Enter Password</mat-label>
+                        <input matInput placeholder="Password" formControlName="password">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="form-element">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput placeholder="Confirm Password" formControlName="confirmPass">
+                    </mat-form-field>
+                    <div>
+                        <button mat-flat-button color="primary" (click)="FormSubmit(registerForm)">submit</button>
+                        <button mat-flat-button color="warn" style="float: right;">Cancle</button>
+                    </div>
+                </form>
+            </div>
+        </mat-card>
+    </div>
+</div>
